@@ -411,11 +411,12 @@ export default function App() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 m-auto h-3/4 w-3/4 object-contain opacity-10 select-none"
           />
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2 md:relative ">
+
             <p className="mb-6 text-xl font-semibold">{APP}</p>
             <h1
               aria-label={HEADLINE}
-              className="relative mb-8 max-w-3xl text-5xl font-bold leading-tight tracking-tight md:text-7xl"
+              className="relative lg:left-30 mb-8 max-w-3xl text-5xl font-bold leading-tight tracking-tight md:text-7xl"
             >
               <span aria-hidden style={{ visibility: "hidden" }}>
                 {HEADLINE}
@@ -425,21 +426,21 @@ export default function App() {
                 <Caret />
               </span>
             </h1>
-            <p className="mb-8 max-w-xl text-lg leading-relaxed" style={{ opacity: 0.85 }}>
+            <p className="lg:relative lg:left-50 mb-8 max-w-xl text-lg leading-relaxed" style={{ opacity: 0.85 }}>
               {APP} runs open models on your own computer. Chat, analyze files and rerun saved
               prompts with no account and no cloud.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 px-5 sm:py-7 lg:py-15 md:relative md:left-40 lg:left-80">
               <button
                 onClick={() => go(1)}
-                className="rounded-lg px-5 py-3 font-medium"
+                className="rounded-lg px-5 py-3 font-medium cursor-pointer"
                 style={{ background: "#E6F4F1", color: "#134E4A" }}
               >
                 See how it works
               </button>
               <button
                 onClick={() => go(SECTIONS.length - 1)}
-                className="rounded-lg border px-5 py-3 font-medium"
+                className="rounded-lg border px-5 py-3 font-medium cursor-pointer"
                 style={{ borderColor: "#E6F4F1", background: "transparent", color: "#E6F4F1" }}
               >
                 Download
