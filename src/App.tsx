@@ -8,6 +8,7 @@ import {
   type UIEvent,
 } from "react";
 import { Download } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const APP = "Private Eco Doc"; // change to your app's name
 
@@ -99,10 +100,10 @@ const Panel = ({ children }: { children: ReactNode }) => (
 
 const teal: CSSProperties = { background: "#0f766e", color: "#fff" };
 
-const ANSWER =
-  "Your lease needs 60 days' written notice before the end of the term. If you stay past it, it renews month to month.";
 
 function ChatDemo() {
+  const { t } = useTranslation();
+  const ANSWER = t("chat.answer");
   const [run, setRun] = useState(false);
   const text = useTyping(ANSWER, run);
   const ask = () => {
@@ -115,20 +116,21 @@ function ChatDemo() {
         className="mb-3 ml-auto w-fit max-w-xs rounded-2xl rounded-br-sm border px-3 py-2"
         style={{ background: "#eef2ff", borderColor: "#e0e7ff", color: "#1e1b4b" }}
       >
-        What does my lease say about notice?
+        {t("chat.question")}
       </div>
       <p className="mb-3 leading-relaxed" style={{ minHeight: 88 }}>
         {text}
         {run && text.length < ANSWER.length && <Caret />}
       </p>
       <button onClick={ask} className="rounded-lg px-4 py-2 font-medium" style={teal}>
-        {run ? "Ask again" : "Ask"}
+        {run ? t("chat.again") : t("chat.ask")}
       </button>
     </Panel>
   );
 }
 
 function FilesDemo() {
+  const { t } = useTranslation();
   const mute: CSSProperties = { color: "#64748b" };
   return (
     <Panel>
@@ -136,7 +138,7 @@ function FilesDemo() {
         className="mb-3 rounded-lg border-2 border-dashed px-3 py-5 text-center"
         style={{ borderColor: "#94a3b8", ...mute }}
       >
-        Drop a file here
+        {t("files.drop")}
       </div>
       <div
         className="mb-3 flex items-center justify-between rounded-lg border px-3 py-2"
@@ -144,7 +146,7 @@ function FilesDemo() {
       >
         <span className="font-medium">lease-agreement.pdf</span>
         <span className="text-xs" style={{ color: "#0f766e" }}>
-          Saved
+          {t("files.saved")}
         </span>
       </div>
       <div className="mb-2 flex gap-2">
@@ -152,31 +154,27 @@ function FilesDemo() {
           className="flex-1 rounded-lg border px-3 py-2"
           style={{ borderColor: "#cbd5e1", ...mute }}
         >
-          notice
+          {t("files.search")}
         </div>
         <span className="rounded-lg px-3 py-2" style={teal}>
-          Find
+          {t("files.find")}
         </span>
       </div>
       <div className="text-xs" style={mute}>
-        Page 4
+        {t("files.page")} 4
       </div>
       <p className="leading-relaxed">
-        The tenant must give 60 days' written{" "}
-        <mark style={{ background: "#fef3c7" }}>notice</mark> before the end of the term.
+        {t("files.before")}
+        <mark style={{ background: "#fef3c7" }}>{t("files.mark")}</mark> {t("files.after")}
       </p>
     </Panel>
   );
 }
 
-const CHECKS = [
-  "Who are the parties?",
-  "How long is the term?",
-  "What is the notice period?",
-  "Are there penalties for leaving early?",
-];
 
 function TaskDemo() {
+const { t } = useTranslation();
+const CHECKS = ["c1", "c2", "c3", "c4"].map((k) => t(`tasks1.${k}`));
   const [done, setDone] = useState(0);
   const [running, setRunning] = useState(false);
   useEffect(() => {
@@ -193,7 +191,7 @@ function TaskDemo() {
   };
   return (
     <Panel>
-      <div className="mb-3 font-semibold">Lease check</div>
+      <div className="mb-3 font-semibold">{t("tasks.name")}</div>
       <ul className="mb-4 list-none space-y-2 p-0">
         {CHECKS.map((q, i) => (
           <li key={q} className="flex items-center gap-2">
@@ -220,10 +218,10 @@ function TaskDemo() {
         style={{ ...teal, opacity: running ? 0.5 : 1 }}
       >
         {running
-          ? `Question ${Math.min(done + 1, CHECKS.length)} of ${CHECKS.length}`
+          ? t("tasks.progress", { current: Math.min(done + 1, CHECKS.length), total: CHECKS.length })
           : done
-            ? "Run again"
-            : "Run task"}
+            ? t("tasks.again")
+            : t("tasks.run")}
       </button>
     </Panel>
   );
@@ -249,6 +247,7 @@ const PALETTES: Record<string, Palette> = {
 };
 
 function ThemeDemo() {
+  const { t } = useTranslation();
   const [name, setName] = useState("Teal");
   const p: Palette = PALETTES[name] ?? PALETTES.Teal;
   const fade: CSSProperties = { transition: "background-color .3s, color .3s" };
@@ -267,7 +266,7 @@ function ThemeDemo() {
               color: n === name ? "#0f172a" : "#E2E8F0",
             }}
           >
-            {n}
+           {t(`appearance.themes.${n.toLowerCase()}`)}
           </button>
         ))}
       </div>
@@ -276,11 +275,11 @@ function ThemeDemo() {
         style={{ borderColor: "#475569", background: p.main, ...fade }}
       >
         <div className="px-3 py-2 text-xs" style={{ background: p.bar, color: p.barText, ...fade }}>
-          Prompt
+         {t("tasks1.prompt")}
         </div>
         <div className="flex" style={{ height: 176 }}>
           <div className="w-32 space-y-1 p-2" style={{ background: p.side, ...fade }}>
-            {["Prompt", "Analyze file", "Saved prompts"].map((x, i) => (
+            {[t("tasks1.prompt"), t("tasks1.analyze"), t("nav.tasks")].map((x, i) => (
               <div
                 key={x}
                 className="rounded px-2 py-1 text-xs"
@@ -295,7 +294,7 @@ function ThemeDemo() {
               className="ml-auto w-fit rounded-xl px-2 py-1 text-xs"
               style={{ background: p.bubble, color: p.bubbleText, ...fade }}
             >
-              Summarize this file
+              {t("themes.summarize")}
             </div>
             {["75%", "90%", "60%"].map((w) => (
               <div key={w} className="rounded" style={{ height: 8, width: w, background: p.line, ...fade }} />
@@ -307,9 +306,12 @@ function ThemeDemo() {
   );
 }
 
-const HEADLINE = "Ask questions about your documents without sending them anywhere.";
+
 
 export default function App() {
+  const aboutRef = useRef<HTMLDialogElement>(null);
+  const { t } = useTranslation();
+  const HEADLINE = t("intro.headline");
   const scroller = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -370,7 +372,7 @@ export default function App() {
       />
 
       <nav
-        aria-label="Sections"
+        aria-label={t("nav.sections")}
         className="absolute right-4 top-1/2 z-20 flex -translate-y-1/2 flex-col items-end gap-3"
         style={blend}
       >
@@ -383,7 +385,7 @@ export default function App() {
             className="flex items-center gap-2 text-sm"
             style={{ background: "transparent", border: 0, padding: 0, color: "#fff" }}
           >
-            <span style={{ opacity: i === active ? 1 : 0, transition: "opacity .2s" }}>{s.label}</span>
+            <span style={{ opacity: i === active ? 1 : 0, transition: "opacity .2s" }}>{t("nav."+s.id)}</span>
             <span
               className="block rounded-full"
               style={{
@@ -427,8 +429,7 @@ export default function App() {
               </span>
             </h1>
             <p className="lg:relative lg:left-50 mb-8 max-w-xl text-lg leading-relaxed" style={{ opacity: 0.85 }}>
-              {APP} runs open models on your own computer. Chat, analyze files and rerun saved
-              prompts with no account and no cloud.
+              {t("intro.body", { app: APP })}
             </p>
             <div className="flex flex-wrap gap-3 px-5 sm:py-7 lg:py-15 md:relative md:left-40 lg:left-80">
               <button
@@ -436,14 +437,14 @@ export default function App() {
                 className="rounded-lg px-5 py-3 font-medium cursor-pointer"
                 style={{ background: "#E6F4F1", color: "#134E4A" }}
               >
-                See how it works
+               {t("intro.see")}
               </button>
               <button
                 onClick={() => go(SECTIONS.length - 1)}
                 className="rounded-lg border px-5 py-3 font-medium cursor-pointer"
                 style={{ borderColor: "#E6F4F1", background: "transparent", color: "#E6F4F1" }}
               >
-                Download
+                {t("intro.download")}
               </button>
             </div>
           </div>
@@ -451,10 +452,9 @@ export default function App() {
 
         <Section s={S.chat}>
           <div>
-            <Heading2>Chat in two speeds</Heading2>
+            <Heading2>{t("chat.title")}</Heading2>
             <Lead>
-              Concise mode answers in a few sentences. Deep mode shows its thinking while it works,
-              so you can see how it got there.
+              {t("chat.lead")}
             </Lead>
           </div>
           <ChatDemo />
@@ -462,10 +462,9 @@ export default function App() {
 
         <Section s={S.files}>
           <div>
-            <Heading2>Drop a file, get a brief</Heading2>
+            <Heading2>{t("files.title")}</Heading2>
             <Lead>
-              PDF, Word, Excel, code, CSV and JSON. Save it to your library, ask follow-up
-              questions, or search for exact words and see where each match is.
+              {t("files.lead")}
             </Lead>
           </div>
           <FilesDemo />
@@ -473,10 +472,8 @@ export default function App() {
 
         <Section s={S.tasks}>
           <div>
-            <Heading2>Write a prompt once, rerun it on any document</Heading2>
-            <Lead>
-              Put one question on each line, choose the documents, and run the whole checklist in
-              one click.
+            <Heading2>{t("tasks.title")}</Heading2>
+            <Lead>{t("tasks.lead")}
             </Lead>
           </div>
           <TaskDemo />
@@ -484,10 +481,9 @@ export default function App() {
 
         <Section s={S.themes}>
           <div>
-            <Heading>Make it yours</Heading>
+            <Heading>{t("themes.title")}</Heading>
             <Lead>
-              Pick a theme and everything follows: sidebar, buttons, chat and the drop zone. The
-              app also speaks 16 languages.
+              {t("themes.lead")}
             </Lead>
           </div>
           <ThemeDemo />
@@ -495,10 +491,9 @@ export default function App() {
 
         <Section s={S.get}>
           <div>
-            <Heading>Download {APP}</Heading>
+            <Heading>{t("get.title", { app: APP })}</Heading>
             <Lead>
-              On first launch the app checks for Ollama and helps you download the models. After
-              that it works offline.
+              {t("get.lead")}
             </Lead>
           </div>
           <div className="space-y-3">
@@ -516,6 +511,51 @@ export default function App() {
           </div>
         </Section>
       </div>
+      <footer
+        className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between gap-4 px-6 py-3 text-xs md:px-20"
+        style={blend}
+      >
+        <span>
+          {"Hodei Eceiza Zaldua"} {t("footer.copyright", { year: new Date().getFullYear(), app: APP })}
+
+        </span>
+        <a
+          onClick={() => aboutRef.current?.showModal()}
+          className="cursor-pointer underline-offset-4 hover:underline"
+          style={{ color: "#fff" }}
+        >
+          {t("footer.about")}
+        </a>
+      </footer>
+      <dialog
+        ref={aboutRef}
+        aria-labelledby="about-title"
+        onClick={(e) => {
+          // click on the backdrop closes it
+          if (e.target === e.currentTarget) e.currentTarget.close();
+        }}
+        className="m-auto w-[min(92vw,28rem)] rounded-xl border p-0 shadow-2xl backdrop:bg-black/60"
+        style={{ borderColor: "#cbd5e1", background: "#fff", color: "#0f172a" }}
+      >
+        <div className="p-6">
+          <h2 id="about-title" className="mb-3 text-2xl font-bold tracking-tight text-stone-950!">
+            {t("about.title", { app: APP })}
+          </h2>
+          <p className="mb-6 leading-relaxed" style={{ opacity: 0.85 }}>
+            {t("about.body", { app: APP })}
+          </p>
+          <div className="flex justify-end">
+            <button
+              autoFocus
+              onClick={() => aboutRef.current?.close()}
+              className="cursor-pointer rounded-lg px-4 py-2 font-medium"
+              style={teal}
+            >
+              {t("about.close")}
+            </button>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }
