@@ -174,7 +174,7 @@ function FilesDemo() {
 
 function TaskDemo() {
 const { t } = useTranslation();
-const CHECKS = ["c1", "c2", "c3", "c4"].map((k) => t(`tasks1.${k}`));
+const CHECKS = ["c1", "c2", "c3", "c4"].map((k) => t(`tasks.${k}`));
   const [done, setDone] = useState(0);
   const [running, setRunning] = useState(false);
   useEffect(() => {
@@ -366,6 +366,22 @@ export default function App() {
 
   return (
     <div className="relative w-full" style={{ height: "100vh" }}>
+      <header
+        className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between gap-4 px-6 py-3 text-sm md:px-20"
+        style={blend}
+      >
+        <span className="bg-amber-50 p-1 rounded-2xl text-slate-900!">
+          {"Hodei Eceiza Zaldua"} {t("footer.copyright", { year: new Date().getFullYear(), app: APP })}
+
+        </span>
+        <button
+          onClick={() => aboutRef.current?.showModal()}
+          className="cursor-pointer underline-offset-4 bg-amber-50 p-2 rounded-2xl text-slate-900!"
+          style={{ color: "#fff" }}
+        >
+          {t("footer.about")}
+        </button>
+      </header>
       <div
         className="absolute left-0 top-0 z-20"
         style={{ height: 3, width: `${progress * 100}%`, background: "#fff", mixBlendMode: "difference" }}
@@ -511,22 +527,6 @@ export default function App() {
           </div>
         </Section>
       </div>
-      <footer
-        className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between gap-4 px-6 py-3 text-xs md:px-20"
-        style={blend}
-      >
-        <span>
-          {"Hodei Eceiza Zaldua"} {t("footer.copyright", { year: new Date().getFullYear(), app: APP })}
-
-        </span>
-        <a
-          onClick={() => aboutRef.current?.showModal()}
-          className="cursor-pointer underline-offset-4 hover:underline"
-          style={{ color: "#fff" }}
-        >
-          {t("footer.about")}
-        </a>
-      </footer>
       <dialog
         ref={aboutRef}
         aria-labelledby="about-title"
@@ -534,15 +534,20 @@ export default function App() {
           // click on the backdrop closes it
           if (e.target === e.currentTarget) e.currentTarget.close();
         }}
-        className="m-auto w-[min(92vw,28rem)] rounded-xl border p-0 shadow-2xl backdrop:bg-black/60"
+        className="m-auto w-[min(92vw,50rem)] rounded-xl border p-0 shadow-2xl backdrop:bg-black/60"
         style={{ borderColor: "#cbd5e1", background: "#fff", color: "#0f172a" }}
       >
         <div className="p-6">
           <h2 id="about-title" className="mb-3 text-2xl font-bold tracking-tight text-stone-950!">
             {t("about.title", { app: APP })}
           </h2>
-          <p className="mb-6 leading-relaxed" style={{ opacity: 0.85 }}>
-            {t("about.body", { app: APP })}
+          {["body", "requirements", "privacy", "eco"].map((k) => (
+            <p key={k} className="mb-3 leading-relaxed" style={{ opacity: 0.85 }}>
+              {t(`about.${k}`, { app: APP })}
+            </p>
+          ))}
+          <p className="mb-6 text-sm leading-relaxed" style={{ opacity: 0.65 }}>
+            {t("about.thirdParty", { app: APP })}
           </p>
           <div className="flex justify-end">
             <button

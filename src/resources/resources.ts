@@ -1,7 +1,14 @@
 const en = {
   translation: {
-    about: { title: "About {{app}}", body: "{{app}} runs open models on your own computer, so your documents never leave it. No account and no cloud: once the models are downloaded, it works offline.", close: "Close" },
-    footer: { copyright: "© {{year}} {{app}}. All rights reserved.", about: "About" },
+    about: {
+      title: "About {{app}}",
+      body: "{{app}} runs open models on your own computer, so your documents never leave it. No account and no cloud: once the models are downloaded, it works offline.",
+      requirements: "Minimum system requirements: 8 GB of RAM and 4 GB of free disk space.",
+      privacy: "Privacy by design: once the models are downloaded, {{app}} does not use the internet, so your documents and questions stay on your computer.",
+      eco: "Better for the environment: everything runs locally, so it does not rely on the servers of big data centers.",
+      thirdParty: "{{app}} uses third-party software and models, such as Ollama and Qwen. We cannot guarantee their proper use or their efficiency.",
+      close: "Close",
+    },    footer: { copyright: "© {{year}} {{app}}. All rights reserved.", about: "About" },
     appearance: { themes: { teal: "Teal", dark: "Dark", indigo: "Indigo" }, button: "Button", selected: "Selected" },
     tasks1: { prompt: "Prompt", analyze: "Analyze file", custom: "Run custom prompts", appearance: "Appearance" },
     nav: { sections: "Sections", intro: "Start", chat: "Chat", files: "Files", tasks: "Saved prompts", themes: "Themes", get: "Download" },
@@ -67,7 +74,15 @@ export const resources = {
   en,
   sv: {
     translation: {
-      about: { title: "Om {{app}}", body: "{{app}} kör öppna modeller på din egen dator, så dina dokument lämnar aldrig den. Inget konto och inget moln: när modellerna är nedladdade fungerar den offline.", close: "Stäng" },
+      about: {
+        title: "Om {{app}}",
+        body: "{{app}} kör öppna modeller på din egen dator, så dina dokument lämnar aldrig den. Inget konto och inget moln: när modellerna är nedladdade fungerar den offline.",
+        requirements: "Minimikrav: 8 GB RAM och 4 GB ledigt diskutrymme.",
+        privacy: "Integritet från grunden: när modellerna är nedladdade använder {{app}} inte internet, så dina dokument och frågor stannar på din dator.",
+        eco: "Bättre för miljön: allt körs lokalt, så den är inte beroende av stora datacenters servrar.",
+        thirdParty: "{{app}} använder programvara och modeller från tredje part, till exempel Ollama och Qwen. Vi kan inte garantera deras korrekta användning eller effektivitet.",
+        close: "Stäng",
+      },
       footer: { copyright: "© {{year}} {{app}}. Alla rättigheter förbehållna.", about: "Om" },
       appearance: { themes: { teal: "Turkos", dark: "Mörkt", indigo: "Indigo" }, button: "Knapp", selected: "Vald" },
       tasks1: { prompt: "Prompt", analyze: "Analysera fil", custom: "Kör egna prompts", appearance: "Utseende" },
@@ -124,7 +139,15 @@ export const resources = {
 
   es: {
     translation: {
-      about: { title: "Acerca de {{app}}", body: "{{app}} ejecuta modelos abiertos en tu propio ordenador, así que tus documentos nunca salen de él. Sin cuenta y sin nube: cuando los modelos están descargados, funciona sin conexión.", close: "Cerrar" },
+      about: {
+        title: "Acerca de {{app}}",
+        body: "{{app}} ejecuta modelos abiertos en tu propio ordenador, así que tus documentos nunca salen de él. Sin cuenta y sin nube: cuando los modelos están descargados, funciona sin conexión.",
+        requirements: "Requisitos mínimos del sistema: 8 GB de RAM y 4 GB de espacio libre en disco.",
+        privacy: "Privacidad por diseño: una vez descargados los modelos, {{app}} no usa internet, así que tus documentos y preguntas se quedan en tu ordenador.",
+        eco: "Mejor para el medio ambiente: todo se ejecuta en local, por lo que no depende de los servidores de los grandes centros de datos.",
+        thirdParty: "{{app}} utiliza software y modelos de terceros, como Ollama y Qwen. No podemos garantizar su uso correcto ni su eficiencia.",
+        close: "Cerrar",
+      },
       footer: { copyright: "© {{year}} {{app}}. Todos los derechos reservados.", about: "Acerca de" },
       appearance: { themes: { teal: "Turquesa", dark: "Oscuro", indigo: "Índigo" }, button: "Botón", selected: "Seleccionado" },
       tasks1: { prompt: "Prompt", analyze: "Analizar archivo", custom: "Ejecutar prompts personalizados", appearance: "Apariencia" },
@@ -181,7 +204,15 @@ export const resources = {
 
   fr: {
     translation: {
-      about: { title: "À propos de {{app}}", body: "{{app}} exécute des modèles ouverts sur votre propre ordinateur : vos documents ne le quittent jamais. Sans compte et sans cloud : une fois les modèles téléchargés, il fonctionne hors ligne.", close: "Fermer" },
+      about: {
+        title: "À propos de {{app}}",
+        body: "{{app}} exécute des modèles ouverts sur votre propre ordinateur : vos documents ne le quittent jamais. Sans compte et sans cloud : une fois les modèles téléchargés, il fonctionne hors ligne.",
+        requirements: "Configuration minimale requise : 8 Go de RAM et 4 Go d'espace disque libre.",
+        privacy: "Confidentialité dès la conception : une fois les modèles téléchargés, {{app}} n'utilise pas internet, donc vos documents et vos questions restent sur votre ordinateur.",
+        eco: "Meilleur pour l'environnement : tout s'exécute en local, sans dépendre des serveurs des grands centres de données.",
+        thirdParty: "{{app}} utilise des logiciels et des modèles tiers, tels qu'Ollama et Qwen. Nous ne pouvons garantir ni leur bon usage ni leur efficacité.",
+        close: "Fermer",
+      },
       footer: { copyright: "© {{year}} {{app}}. Tous droits réservés.", about: "À propos" },
       appearance: { themes: { teal: "Turquoise", dark: "Sombre", indigo: "Indigo" }, button: "Bouton", selected: "Sélectionné" },
       tasks1: { prompt: "Prompt", analyze: "Analyser un fichier", custom: "Exécuter des prompts personnalisés", appearance: "Apparence" },
@@ -237,7 +268,15 @@ export const resources = {
   },
   de: {
     translation: {
-      about: { title: "Über {{app}}", body: "{{app}} führt offene Modelle auf deinem eigenen Computer aus, deine Dokumente verlassen ihn also nie. Kein Konto und keine Cloud: Sobald die Modelle heruntergeladen sind, funktioniert es offline.", close: "Schließen" },
+      about: {
+        title: "Über {{app}}",
+        body: "{{app}} führt offene Modelle auf deinem eigenen Computer aus, deine Dokumente verlassen ihn also nie. Kein Konto und keine Cloud: Sobald die Modelle heruntergeladen sind, funktioniert es offline.",
+        requirements: "Mindestsystemanforderungen: 8 GB RAM und 4 GB freier Speicherplatz.",
+        privacy: "Datenschutz von Grund auf: Sobald die Modelle heruntergeladen sind, nutzt {{app}} kein Internet, sodass deine Dokumente und Fragen auf deinem Computer bleiben.",
+        eco: "Besser für die Umwelt: Alles läuft lokal und ist daher nicht auf die Server großer Rechenzentren angewiesen.",
+        thirdParty: "{{app}} verwendet Software und Modelle von Drittanbietern, etwa Ollama und Qwen. Wir können weder deren korrekte Verwendung noch deren Effizienz garantieren.",
+        close: "Schließen",
+      },
       footer: { copyright: "© {{year}} {{app}}. Alle Rechte vorbehalten.", about: "Über" },
       appearance: { themes: { teal: "Türkis", dark: "Dunkel", indigo: "Indigo" }, button: "Schaltfläche", selected: "Ausgewählt" },
           tasks1: { prompt: "Prompt", analyze: "Datei analysieren", custom: "Eigene Prompts ausführen", appearance: "Darstellung" },
@@ -294,7 +333,15 @@ export const resources = {
 
   pt: {
     translation: {
-      about: { title: "Sobre o {{app}}", body: "O {{app}} executa modelos abertos no seu próprio computador, então seus documentos nunca saem dele. Sem conta e sem nuvem: depois de baixar os modelos, funciona offline.", close: "Fechar" },
+      about: {
+        title: "Sobre o {{app}}",
+        body: "O {{app}} executa modelos abertos no seu próprio computador, então seus documentos nunca saem dele. Sem conta e sem nuvem: depois de baixar os modelos, funciona offline.",
+        requirements: "Requisitos mínimos do sistema: 8 GB de RAM e 4 GB de espaço livre em disco.",
+        privacy: "Privacidade desde a concepção: depois que os modelos são baixados, o {{app}} não usa a internet, então seus documentos e perguntas ficam no seu computador.",
+        eco: "Melhor para o meio ambiente: tudo roda localmente, sem depender dos servidores de grandes data centers.",
+        thirdParty: "O {{app}} usa softwares e modelos de terceiros, como Ollama e Qwen. Não podemos garantir o uso adequado nem a eficiência deles.",
+        close: "Fechar",
+      },
       footer: { copyright: "© {{year}} {{app}}. Todos os direitos reservados.", about: "Sobre" },
       appearance: { themes: { teal: "Verde-azulado", dark: "Escuro", indigo: "Índigo" }, button: "Botão", selected: "Selecionado" },
       tasks1: { prompt: "Prompt", analyze: "Analisar arquivo", custom: "Executar prompts personalizados" },
@@ -351,7 +398,15 @@ export const resources = {
 
   it: {
     translation: {
-      about: { title: "Informazioni su {{app}}", body: "{{app}} esegue modelli aperti sul tuo computer, quindi i tuoi documenti non lo lasciano mai. Nessun account e nessun cloud: una volta scaricati i modelli, funziona offline.", close: "Chiudi" },
+      about: {
+        title: "Informazioni su {{app}}",
+        body: "{{app}} esegue modelli aperti sul tuo computer, quindi i tuoi documenti non lo lasciano mai. Nessun account e nessun cloud: una volta scaricati i modelli, funziona offline.",
+        requirements: "Requisiti minimi di sistema: 8 GB di RAM e 4 GB di spazio libero su disco.",
+        privacy: "Privacy fin dalla progettazione: una volta scaricati i modelli, {{app}} non usa internet, quindi i tuoi documenti e le tue domande restano sul tuo computer.",
+        eco: "Meglio per l'ambiente: tutto viene eseguito in locale, senza dipendere dai server dei grandi data center.",
+        thirdParty: "{{app}} usa software e modelli di terze parti, come Ollama e Qwen. Non possiamo garantirne il corretto utilizzo né l'efficienza.",
+        close: "Chiudi",
+      },
       footer: { copyright: "© {{year}} {{app}}. Tutti i diritti riservati.", about: "Informazioni" },
       appearance: { themes: { teal: "Verde acqua", dark: "Scuro", indigo: "Indaco" }, button: "Pulsante", selected: "Selezionato" },
       tasks1: { prompt: "Prompt", analyze: "Analizza file", custom: "Esegui prompt personalizzati", appearance: "Aspetto" },
@@ -408,7 +463,15 @@ export const resources = {
 
   nl: {
     translation: {
-      about: { title: "Over {{app}}", body: "{{app}} draait open modellen op je eigen computer, dus je documenten verlaten hem nooit. Geen account en geen cloud: zodra de modellen zijn gedownload, werkt het offline.", close: "Sluiten" },
+      about: {
+        title: "Over {{app}}",
+        body: "{{app}} draait open modellen op je eigen computer, dus je documenten verlaten hem nooit. Geen account en geen cloud: zodra de modellen zijn gedownload, werkt het offline.",
+        requirements: "Minimale systeemeisen: 8 GB RAM en 4 GB vrije schijfruimte.",
+        privacy: "Privacy by design: zodra de modellen zijn gedownload, gebruikt {{app}} geen internet, zodat je documenten en vragen op je computer blijven.",
+        eco: "Beter voor het milieu: alles draait lokaal en is dus niet afhankelijk van de servers van grote datacenters.",
+        thirdParty: "{{app}} gebruikt software en modellen van derden, zoals Ollama en Qwen. We kunnen het juiste gebruik of de efficiëntie ervan niet garanderen.",
+        close: "Sluiten",
+      },
       footer: { copyright: "© {{year}} {{app}}. Alle rechten voorbehouden.", about: "Over" },
       appearance: { themes: { teal: "Turquoise", dark: "Donker", indigo: "Indigo" }, button: "Knop", selected: "Geselecteerd" },
     tasks1: { prompt: "Prompt", analyze: "Bestand analyseren", custom: "Eigen prompts uitvoeren", appearance: "Uiterlijk" },
@@ -465,7 +528,15 @@ export const resources = {
 
   pl: {
     translation: {
-      about: { title: "O {{app}}", body: "{{app}} uruchamia otwarte modele na Twoim komputerze, więc dokumenty nigdy go nie opuszczają. Bez konta i bez chmury: po pobraniu modeli działa offline.", close: "Zamknij" },
+      about: {
+        title: "O {{app}}",
+        body: "{{app}} uruchamia otwarte modele na Twoim komputerze, więc dokumenty nigdy go nie opuszczają. Bez konta i bez chmury: po pobraniu modeli działa offline.",
+        requirements: "Minimalne wymagania systemowe: 8 GB RAM i 4 GB wolnego miejsca na dysku.",
+        privacy: "Prywatność od podstaw: po pobraniu modeli {{app}} nie korzysta z internetu, więc Twoje dokumenty i pytania zostają na Twoim komputerze.",
+        eco: "Lepiej dla środowiska: wszystko działa lokalnie, więc nie korzysta z serwerów wielkich centrów danych.",
+        thirdParty: "{{app}} korzysta z oprogramowania i modeli firm trzecich, takich jak Ollama i Qwen. Nie możemy zagwarantować ich prawidłowego użycia ani wydajności.",
+        close: "Zamknij",
+      },
       footer: { copyright: "© {{year}} {{app}}. Wszelkie prawa zastrzeżone.", about: "O nas" },
       appearance: { themes: { teal: "Morski", dark: "Ciemny", indigo: "Indygo" }, button: "Przycisk", selected: "Wybrany" },
       tasks1: { prompt: "Prompt", analyze: "Analizuj plik", custom: "Uruchom własne prompty", appearance: "Wygląd" },
@@ -523,7 +594,15 @@ export const resources = {
 
   ru: {
     translation: {
-      about: { title: "О {{app}}", body: "{{app}} запускает открытые модели на вашем компьютере, поэтому документы никогда его не покидают. Без аккаунта и без облака: после загрузки моделей работает офлайн.", close: "Закрыть" },
+      about: {
+        title: "О {{app}}",
+        body: "{{app}} запускает открытые модели на вашем компьютере, поэтому документы никогда его не покидают. Без аккаунта и без облака: после загрузки моделей работает офлайн.",
+        requirements: "Минимальные системные требования: 8 ГБ оперативной памяти и 4 ГБ свободного места на диске.",
+        privacy: "Приватность по умолчанию: после загрузки моделей {{app}} не использует интернет, поэтому ваши документы и вопросы остаются на вашем компьютере.",
+        eco: "Лучше для окружающей среды: всё работает локально, без обращения к серверам больших дата-центров.",
+        thirdParty: "{{app}} использует стороннее программное обеспечение и модели, такие как Ollama и Qwen. Мы не можем гарантировать их правильное использование и эффективность.",
+        close: "Закрыть",
+      },
       footer: { copyright: "© {{year}} {{app}}. Все права защищены.", about: "О проекте" },
       appearance: { themes: { teal: "Бирюзовый", dark: "Тёмный", indigo: "Индиго" }, button: "Кнопка", selected: "Выбрано" },
       tasks1: { prompt: "Промпт", analyze: "Анализ файла", custom: "Запуск своих промптов", appearance: "Оформление" },
@@ -580,7 +659,15 @@ export const resources = {
 
   ja: {
     translation: {
-      about: { title: "{{app}}について", body: "{{app}}はオープンモデルをお使いのコンピューター上で実行するため、ドキュメントが外部に出ることはありません。アカウントもクラウドも不要で、モデルをダウンロードした後はオフラインで動作します。", close: "閉じる" },
+      about: {
+        title: "{{app}}について",
+        body: "{{app}}はオープンモデルをお使いのコンピューター上で実行するため、ドキュメントが外部に出ることはありません。アカウントもクラウドも不要で、モデルをダウンロードした後はオフラインで動作します。",
+        requirements: "最小システム要件：RAM 8 GB、ディスクの空き容量 4 GB。",
+        privacy: "設計段階からプライバシーを重視：モデルのダウンロード後、{{app}}はインターネットを使用しないため、ドキュメントや質問はお使いのコンピューターから出ません。",
+        eco: "環境にもやさしい：すべてローカルで動作するため、大規模データセンターのサーバーに依存しません。",
+        thirdParty: "{{app}}は、OllamaやQwenなどのサードパーティ製ソフトウェアおよびモデルを使用しています。それらの適切な使用や効率性を保証することはできません。",
+        close: "閉じる",
+      },
       footer: { copyright: "© {{year}} {{app}}. 無断複写・転載を禁じます。", about: "概要" },
       tasks1: { prompt: "プロンプト", analyze: "ファイルを分析", custom: "カスタムプロンプトを実行", appearance: "外観" },
       appearance: { themes: { teal: "ティール", dark: "ダーク", indigo: "インディゴ" }, button: "ボタン", selected: "選択中" },
@@ -637,7 +724,15 @@ export const resources = {
 
   zh: {
     translation: {
-      about: { title: "关于 {{app}}", body: "{{app}} 在你自己的电脑上运行开源模型，因此你的文档不会离开你的电脑。无需账号，无需云端：模型下载完成后即可离线使用。", close: "关闭" },
+      about: {
+        title: "关于 {{app}}",
+        body: "{{app}} 在你自己的电脑上运行开源模型，因此你的文档不会离开你的电脑。无需账号，无需云端：模型下载完成后即可离线使用。",
+        requirements: "最低系统要求：8 GB 内存和 4 GB 可用磁盘空间。",
+        privacy: "隐私优先的设计：模型下载完成后，{{app}} 不使用互联网，因此你的文档和提问都保留在你的电脑上。",
+        eco: "更环保：一切都在本地运行，不依赖大型数据中心的服务器。",
+        thirdParty: "{{app}} 使用第三方软件和模型，例如 Ollama 和 Qwen。我们无法保证它们的正确使用或运行效率。",
+        close: "关闭",
+      },
       footer: { copyright: "© {{year}} {{app}}。保留所有权利。", about: "关于" },
       tasks1: { prompt: "提示词", analyze: "分析文件", custom: "运行自定义提示词", appearance: "外观" },
       appearance: { themes: { teal: "青色", dark: "深色", indigo: "靛蓝" }, button: "按钮", selected: "已选中" },
@@ -694,7 +789,15 @@ export const resources = {
 
   ko: {
     translation: {
-      about: { title: "{{app}} 소개", body: "{{app}}은(는) 내 컴퓨터에서 오픈 모델을 실행하므로 문서가 컴퓨터 밖으로 나가지 않습니다. 계정도 클라우드도 필요 없으며, 모델을 다운로드한 후에는 오프라인으로 작동합니다.", close: "닫기" },
+      about: {
+        title: "{{app}} 소개",
+        body: "{{app}}은(는) 내 컴퓨터에서 오픈 모델을 실행하므로 문서가 컴퓨터 밖으로 나가지 않습니다. 계정도 클라우드도 필요 없으며, 모델을 다운로드한 후에는 오프라인으로 작동합니다.",
+        requirements: "최소 시스템 요구 사항: RAM 8GB, 여유 디스크 공간 4GB.",
+        privacy: "설계부터 프라이버시를 고려했습니다. 모델을 다운로드한 후에는 {{app}}이(가) 인터넷을 사용하지 않으므로 문서와 질문이 내 컴퓨터에만 남습니다.",
+        eco: "환경에도 더 좋습니다. 모든 것이 로컬에서 실행되어 대형 데이터 센터의 서버에 의존하지 않습니다.",
+        thirdParty: "{{app}}은(는) Ollama, Qwen 등 서드파티 소프트웨어와 모델을 사용합니다. 이들의 올바른 사용이나 효율성은 보장할 수 없습니다.",
+        close: "닫기",
+      },
       footer: { copyright: "© {{year}} {{app}}. 모든 권리 보유.", about: "소개" },
       tasks1: { prompt: "프롬프트", analyze: "파일 분석", custom: "사용자 지정 프롬프트 실행", appearance: "외관" },
       appearance: { themes: { teal: "청록", dark: "다크", indigo: "인디고" }, button: "버튼", selected: "선택됨" },
@@ -751,7 +854,15 @@ export const resources = {
 
   ar: {
     translation: {
-      about: { title: "حول {{app}}", body: "يشغّل {{app}} نماذج مفتوحة على حاسوبك الخاص، لذا لا تغادر مستنداتك جهازك أبدًا. دون حساب ودون سحابة: بعد تنزيل النماذج يعمل دون اتصال.", close: "إغلاق" },
+      about: {
+        title: "حول {{app}}",
+        body: "يشغّل {{app}} نماذج مفتوحة على حاسوبك الخاص، لذا لا تغادر مستنداتك جهازك أبدًا. دون حساب ودون سحابة: بعد تنزيل النماذج يعمل دون اتصال.",
+        requirements: "الحد الأدنى لمتطلبات النظام: 8 غيغابايت من الذاكرة (RAM) و4 غيغابايت من مساحة القرص الحرة.",
+        privacy: "الخصوصية من التصميم: بعد تنزيل النماذج لا يستخدم {{app}} الإنترنت، لذا تبقى مستنداتك وأسئلتك على حاسوبك.",
+        eco: "أفضل للبيئة: كل شيء يعمل محليًا، فلا يعتمد على خوادم مراكز البيانات الكبيرة.",
+        thirdParty: "يستخدم {{app}} برامج ونماذج من جهات خارجية، مثل Ollama وQwen. لا يمكننا ضمان استخدامها الصحيح أو كفاءتها.",
+        close: "إغلاق",
+      },
       footer: { copyright: "© {{year}} {{app}}. جميع الحقوق محفوظة.", about: "حول" },
       tasks1: { prompt: "الموجِّه (Prompt)", analyze: "تحليل ملف", custom: "تشغيل موجِّهات مخصصة", appearance: "المظهر" },
       appearance: { themes: { teal: "أزرق مخضر", dark: "داكن", indigo: "نيلي" }, button: "زر", selected: "محدد" },
@@ -807,7 +918,16 @@ export const resources = {
   },
 
   hi: {
-    translation: {about: { title: "{{app}} के बारे में", body: "{{app}} खुले मॉडल आपके अपने कंप्यूटर पर चलाता है, इसलिए आपके दस्तावेज़ कभी उससे बाहर नहीं जाते। न खाता, न क्लाउड: मॉडल डाउनलोड होने के बाद यह ऑफ़लाइन काम करता है।", close: "बंद करें" },
+    translation: {
+      about: {
+        title: "{{app}} के बारे में",
+        body: "{{app}} खुले मॉडल आपके अपने कंप्यूटर पर चलाता है, इसलिए आपके दस्तावेज़ कभी उससे बाहर नहीं जाते। न खाता, न क्लाउड: मॉडल डाउनलोड होने के बाद यह ऑफ़लाइन काम करता है।",
+        requirements: "न्यूनतम सिस्टम आवश्यकताएँ: 8 GB RAM और 4 GB खाली डिस्क स्थान।",
+        privacy: "डिज़ाइन से ही निजता: मॉडल डाउनलोड होने के बाद {{app}} इंटरनेट का उपयोग नहीं करता, इसलिए आपके दस्तावेज़ और सवाल आपके कंप्यूटर पर ही रहते हैं।",
+        eco: "पर्यावरण के लिए बेहतर: सब कुछ स्थानीय रूप से चलता है, इसलिए यह बड़े डेटा सेंटरों के सर्वरों पर निर्भर नहीं है।",
+        thirdParty: "{{app}} तीसरे पक्ष के सॉफ़्टवेयर और मॉडल, जैसे Ollama और Qwen, का उपयोग करता है। हम उनके सही उपयोग या उनकी दक्षता की गारंटी नहीं दे सकते।",
+        close: "बंद करें",
+      },
       footer: { copyright: "© {{year}} {{app}}। सर्वाधिकार सुरक्षित।", about: "परिचय" },
       tasks1: { prompt: "प्रॉम्प्ट", analyze: "फ़ाइल का विश्लेषण करें", custom: "कस्टम प्रॉम्प्ट चलाएँ", appearance: "रूप-रंग" },
       appearance: { themes: { teal: "टील", dark: "डार्क", indigo: "इंडिगो" }, button: "बटन", selected: "चयनित" },
@@ -864,7 +984,15 @@ export const resources = {
 
   eu: {
     translation: {
-      about: { title: "{{app}}(r)i buruz", body: "{{app}}(e)k modelo irekiak exekutatzen ditu zure ordenagailuan, beraz zure dokumentuek ez dute inoiz hura uzten. Konturik eta hodeirik gabe: ereduak deskargatu ondoren, lineaz kanpo funtzionatzen du.", close: "Itxi" },
+      about: {
+        title: "{{app}}(r)i buruz",
+        body: "{{app}}(e)k modelo irekiak exekutatzen ditu zure ordenagailuan, beraz zure dokumentuek ez dute inoiz hura uzten. Konturik eta hodeirik gabe: ereduak deskargatu ondoren, lineaz kanpo funtzionatzen du.",
+        requirements: "Sistemaren gutxieneko eskakizunak: 8 GB RAM eta 4 GB diskoko leku librea.",
+        privacy: "Pribatutasuna diseinutik: ereduak deskargatu ondoren, {{app}}(e)k ez du internetik erabiltzen, beraz zure dokumentuak eta galderak zure ordenagailuan geratzen dira.",
+        eco: "Ingurumenarentzat hobea: dena lokalean exekutatzen da, beraz ez du datu-zentro handien zerbitzarietan oinarritzen.",
+        thirdParty: "{{app}}(e)k hirugarrenen softwarea eta ereduak erabiltzen ditu, Ollama eta Qwen adibidez. Ezin dugu bermatu horien erabilera zuzena edo eraginkortasuna.",
+        close: "Itxi",
+      },
       footer: { copyright: "© {{year}} {{app}}. Eskubide guztiak erreserbatuta.", about: "Honi buruz" },
       tasks1: { prompt: "Prompta", analyze: "Fitxategia aztertu", custom: "Prompt pertsonalizatuak exekutatu", appearance: "Itxura" },
       appearance: { themes: { teal: "Turkesa", dark: "Iluna", indigo: "Indigoa" }, button: "Botoia", selected: "Hautatuta" },
