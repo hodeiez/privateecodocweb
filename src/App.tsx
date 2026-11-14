@@ -367,16 +367,13 @@ export default function App() {
   return (
     <div className="relative w-full" style={{ height: "100vh" }}>
       <header
-        className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between gap-4 px-6 py-3 text-sm md:px-20"
+        className="absolute top-0 left-0 right-0 z-20 flex items-center justify-end gap-4 px-6 py-3 text-sm md:px-20"
         style={blend}
       >
-        <span className="bg-amber-50 p-1 rounded-2xl text-slate-900!">
-          {"Hodei Eceiza Zaldua"} {t("footer.copyright", { year: new Date().getFullYear(), app: APP })}
 
-        </span>
         <button
           onClick={() => aboutRef.current?.showModal()}
-          className="cursor-pointer underline-offset-4 bg-amber-50 p-2 rounded-2xl text-slate-900!"
+          className="cursor-pointer underline-offset-4 bg-amber-50 p-3 rounded-2xl   text-slate-900! hover:bg-amber-200"
           style={{ color: "#fff" }}
         >
           {t("footer.about")}
@@ -549,7 +546,7 @@ export default function App() {
           <p className="mb-6 text-sm leading-relaxed" style={{ opacity: 0.65 }}>
             {t("about.thirdParty", { app: APP })}
           </p>
-          <div className="flex justify-end">
+          <div className="flex justify-end pt-5">
             <button
               autoFocus
               onClick={() => aboutRef.current?.close()}
@@ -561,6 +558,13 @@ export default function App() {
           </div>
         </div>
       </dialog>
+      <footer     className="absolute bottom-0 left-0 right-0 z-20 flex  px-6 py-3 text-sm md:px-20"
+      style={blend}>
+        <span className="">
+          {"Hodei Eceiza Zaldua"} {t("footer.copyright", { year: new Date().getFullYear(), app: APP })}
+
+        </span>
+      </footer>
     </div>
   );
 }
